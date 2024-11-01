@@ -70,8 +70,8 @@ button:hover,
 .icon {
   padding: 0px 8px 3.5px 0px;
   vertical-align: middle;
-  width: 20px;
-  height: 20px;
+  width: auto;
+  height: 24px;
 }
 
 /* Brand Styles
@@ -1077,3 +1077,135 @@ button:hover,
 .button.button-zoom:focus {
   filter: brightness(90%);
 }
+/* Jonas Custom */
+.glow-animation {
+  position: relative;
+  display: inline-flex; /* Use inline-flex to align items horizontally */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  border-radius: 8px;
+  background-color: #fff; /* Background color for visibility */
+  padding: 14px 12px; /* Match padding with other buttons */
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Change text color */
+  font-weight: bold; /* Make text bold */
+  overflow: hidden; /* Clip the animation inside the button */
+  font-size: 18px; /* Ensure font size is consistent */
+  line-height: 20px; /* Match line height */
+}
+
+.glow-animation::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0; /* Fill the button completely */
+  border-radius: 8px; /* Match the button's border radius */
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, rgba(255, 0, 102, 0.6), rgba(255, 153, 0, 0.6), rgba(51, 204, 255, 0.6), rgba(255, 0, 102, 0.6));
+  background-size: 300% 300%;
+  animation: glowing-border 3s linear infinite;
+  z-index: 0; /* Ensure it's behind the text */
+  opacity: 0.8; /* Adjust opacity for a softer glow */
+}
+
+.glow-animation img {
+  height: 24px; /* Set a fixed height for the image */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 8px; /* Space between image and text */
+  z-index: 1; /* Ensure image is above the glowing effect */
+}
+
+.glow-animation span {
+  position: relative; /* Make text relative so it appears above the glowing effect */
+  z-index: 1; /* Ensure the text is above the glowing effect */
+}
+
+.button,
+button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px; /* Consistent font size */
+  width: 300px; /* Set width for all buttons */
+  font-weight: 700; /* Consistent font weight */
+  line-height: 20px; /* Consistent line height */
+  padding: 14px 12px; /* Consistent padding */
+  letter-spacing: 0.1px;
+  white-space: nowrap; /* Prevent text wrapping */
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover,
+.button:focus {
+  color: #212121;
+  border-color: #888;
+  outline: #7AB8FF solid 3px;
+}
+
+.button.button-primary {
+  color: #fff;
+  filter: brightness(90%);
+}
+
+.button.button-primary:hover,
+.button.button-primary:focus {
+  color: #fff;
+  filter: brightness(90%);
+}
+
+
+@keyframes glowing-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.social-media-icons {
+  display: flex;               /* Use flexbox for layout */
+  justify-content: center;     /* Center the icons */
+  flex-wrap: wrap;            /* Allow wrapping of icons */
+  gap: 10px;                  /* Space between icons */
+}
+
+.social-icon {
+  display: inline-flex;        /* Use inline-flex for centering */
+  justify-content: center;     /* Center the content */
+  align-items: center;         /* Center vertically */
+  width: 50px;                /* Set a fixed width for circular shape */
+  height: 50px;               /* Set a fixed height for circular shape */
+  border-radius: 50%;         /* Make it round */
+  background-color: black;    /* Black background */
+  text-decoration: none;       /* Remove underline */
+  color: white;                /* Text color */
+  font-weight: 700;           /* Font weight */
+  line-height: 20px;          /* Line height */
+  padding: 0;                 /* Remove padding */
+  cursor: pointer;            /* Change cursor on hover */
+  transition: all 0.3s;       /* Smooth transition for hover effects */
+}
+
+.social-icon img {
+  width: 60%;                 /* Scale image to fit within the icon */
+  height: 60%;                /* Scale image to fit within the icon */
+  object-fit: contain;        /* Ensure the image fits well */
+}
+
+.social-icon:hover {
+  color: #212121;             /* Change text color on hover */
+  border-color: #888;         /* Change border color on hover */
+  outline: #7AB8FF solid 3px; /* Add outline on hover */
+  filter: brightness(90%);     /* Slightly darken icon on hover */
+}
+
+/* Existing icon style for buttons */
+.icon {
+padding: 0px 8px 3.5px 0px; /* Keep existing padding */
+vertical-align: middle;      /* Align with text */
+width: auto;                 /* Maintain original width */
+height: 24px;                /* Maintain original height */
+}
+
+
