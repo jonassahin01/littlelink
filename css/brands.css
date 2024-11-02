@@ -1209,3 +1209,19 @@ height: 24px;                /* Maintain original height */
 }
 
 
+/* Throne */
+.button.button-throne { 
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff6b6b, #f0e130); /* Adjust colors as needed */
+  border: 1px solid #ffffff;
+  
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline from links */
+  display: inline-block; /* Make it behave like a button */
+  transition: filter 0.3s; /* Smooth transition for hover effect */
+}
+
+.button.button-throne:hover,
+.button.button-throne:focus {
+  filter: brightness(90%);
+}
