@@ -51,7 +51,28 @@
 
     gtag('config', 'G-76NTPD1Q71');
   </script>
+  <!-- Other head elements -->
+  <script defer>
+    function openModal() {
+      document.getElementById("psnModal").style.display = "block";
+    }
 
+    function closeModal() {
+      document.getElementById("psnModal").style.display = "none";
+      document.getElementById("copyMessage").style.display = "none";
+    }
+
+    function copyGamertag() {
+      const gamertagInput = document.getElementById("gamertag");
+      gamertagInput.select();
+      gamertagInput.setSelectionRange(0, 99999); // For mobile devices
+      document.execCommand("copy");
+
+      // Show "Copied!" message
+      const copyMessage = document.getElementById("copyMessage");
+      copyMessage.style.display = "block";
+    }
+  </script>
 </head>
 
 <body>
@@ -185,7 +206,28 @@
       <img src="images/icons/youtube.svg" alt="YouTube Logo">
   </a>
 </div>
-
+<br>
+<div class="social-media-icons">
+  <a class="social-icon playstation" href="javascript:void(0);" onclick="openModal()" role="button">
+    <img src="images/icons-extended/playstation.svg" alt="PSN Logo">
+  </a>
+  <a class="social-icon xbox" href="https://www.xbox.com/fi-FI/play/user/sofiaxoxo7500" target="_blank" rel="noopener" role="button">
+      <img src="images/icons-extended/xbox.svg" alt="Xbox Logo">
+  </a>
+  <a class="social-icon steam" href="https://steamcommunity.com/id/sofiaavallone" target="_blank" rel="noopener" role="button">
+      <img src="images/icons/steam.svg" alt="Steam Logo">
+  </a>
+  <!-- Modal Structure -->
+<div id="psnModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p>My PlayStation Gamertag:</p>
+    <input type="text" id="gamertag" value="sofiaavallone" readonly>
+    <button onclick="copyGamertag()">Copy Gamertag</button>
+    <p id="copyMessage" style="display:none; color: green;">Copied!</p>
+  </div>
+</div>
+</div>
         <br>
         <!-- 
             Footer:
