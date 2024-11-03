@@ -44,35 +44,7 @@
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-76NTPD1Q71"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-76NTPD1Q71');
-  </script>
-  <!-- Other head elements -->
-  <script defer>
-    function openModal() {
-      document.getElementById("psnModal").style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("psnModal").style.display = "none";
-      document.getElementById("copyMessage").style.display = "none";
-    }
-
-    function copyGamertag() {
-      const gamertagInput = document.getElementById("gamertag");
-      gamertagInput.select();
-      gamertagInput.setSelectionRange(0, 99999); // For mobile devices
-      document.execCommand("copy");
-
-      // Show "Copied!" message
-      const copyMessage = document.getElementById("copyMessage");
-      copyMessage.style.display = "block";
-    }
-  </script>
+  <script src="modal.js" defer></script>
 </head>
 
 <body>
@@ -217,8 +189,10 @@
   <a class="social-icon steam" href="https://steamcommunity.com/id/sofiaavallone" target="_blank" rel="noopener" role="button">
       <img src="images/icons/steam.svg" alt="Steam Logo">
   </a>
-  <!-- Modal Structure -->
-<div id="psnModal" class="modal">
+</div>
+
+<!-- Modal Structure -->
+<div id="psnModal" class="modal" style="display: none;">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <p>My PlayStation Gamertag:</p>
@@ -227,7 +201,7 @@
     <p id="copyMessage" style="display:none; color: green;">Copied!</p>
   </div>
 </div>
-</div>
+
         <br>
         <!-- 
             Footer:
