@@ -1324,18 +1324,28 @@ height: 24px;                /* Maintain original height */
 /* Badge styling */
 .badge {
   position: absolute;
-  top: -10px;      /* Adjust this value to move it up or down */
-  right: -10px;    /* Adjust this to move it more outside to the right */
-  background-color: #ff5252; /* Red background color */
+  top: -10px;
+  right: -10px;
+  background-color: #ff5252;
   color: white;
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.75em;
   font-weight: bold;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Centers text and countdown */
   white-space: nowrap;
   z-index: 10;
 }
+
+.badge #countdown {
+  display: block; /* Ensures countdown is on a new line */
+  margin-top: -6px; /* Reduce space between "Sale!" and countdown */
+  font-size: 0.75em; /* Same size as main badge text */
+  font-weight: bold;
+  color: white; /* Keep color consistent */
+}
+
 
 
 /* Optional glow animation for button */
@@ -1352,3 +1362,11 @@ height: 24px;                /* Maintain original height */
     box-shadow: 0 0 15px rgba(0, 88, 204, 0.9), 0 0 20px rgba(0, 88, 204, 0.9);
   }
 }
+
+.privacy-message {
+  font-size: 0.8em; /* Adjusts the text size smaller */
+  color: rgba(0, 0, 0, 0.7); /* Makes the text a lighter shade to blend with white */
+  text-align: center; /* Centers the text */
+  margin-top: 20px; /* Adds space above the paragraph */
+}
+

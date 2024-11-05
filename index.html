@@ -63,6 +63,29 @@
     })(window, document, "clarity", "script", "otj6rz8wap");
   </script>
 
+
+<script>
+  function updateCountdown() {
+    const now = new Date();
+    const tomorrow = new Date();
+    tomorrow.setHours(24, 0, 0, 0); // Set to midnight
+
+    const diff = tomorrow - now;
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = 
+      `${hours}h ${minutes}m ${seconds}s`;
+
+    if (diff <= 0) {
+      clearInterval(timer);
+      updateCountdown(); // Reset for the next day
+    }
+  }
+
+  const timer = setInterval(updateCountdown, 1000);
+</script>
 </head>
 
 <body>
@@ -131,9 +154,12 @@
         <!-- OnlyFans Links -->
 
         <div class="button-wrapper">
-          <!-- Sale Badge -->
-          <div class="badge">🔥 Sale!</div>
-        
+          <!-- Sale Badge with Countdown -->
+          <div class="badge">
+            🔥 Sale!
+            <div id="countdown"></div>
+          </div>
+          
           <!-- OnlyFans Button -->
           <a class="button button-onlyfans glow-animation" href="https://onlyfans.com/sofiaavallone?ref=295129770" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/onlyfans.svg" alt="OnlyFans Logo">
@@ -159,10 +185,6 @@
 </a> 
 </div>
 <br>
-<!--<a class="button button-amazon" href="https://www.pornhub.com/model/sofiaavallone" target="_blank" rel="noopener" role="button">
-    <img class="icon" aria-hidden="true" src="images/icons-extended/pornhub.svg" alt="Pornhub Icon">Pornhub (18+)
-</a>
-<br>-->
 <!-- Payment Links -->
 <h2>Payments</h2>
 
@@ -225,7 +247,8 @@
             This also includes a link to the LittleLink repository to make forking LittleLink easier.
             You can edit or remove anything here to make your own footer.
         -->
-        <p><a href="privacy.html">Privacy Policy</a> | Build your own by forking <a href="https://littlelink.io" target="_blank" rel="noopener" role="button">LittleLink</a>.</p>
+        <p class="privacy-message">❤️ Your privacy matters! Read our <a href="privacy.html">Privacy Policy</a> to see how I keep your information safe. Thank you for being here! 😊</p>
+
 
       </div>
     </div>
