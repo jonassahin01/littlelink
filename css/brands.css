@@ -1277,18 +1277,7 @@ height: 24px;                /* Maintain original height */
   filter: brightness(90%);
 }
 
-/* Modal styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
-}
+
 
 .modal-content {
   background-color: #fefefe;
@@ -1335,7 +1324,7 @@ height: 24px;                /* Maintain original height */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   text-align: center; /* Centers text and countdown */
   white-space: nowrap;
-  z-index: 10;
+  z-index: 8;
 }
 
 .badge #countdown {
@@ -1370,3 +1359,110 @@ height: 24px;                /* Maintain original height */
   margin-top: 20px; /* Adds space above the paragraph */
 }
 
+/* Basic styling */
+body { font-family: Arial, sans-serif; margin: 0; }
+
+/* Small three-dots button styling */
+.open-modal-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #666;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9;
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    width: 50%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .modal {
+        width: 80%;
+    }
+}
+
+/* Profile Picture */
+.modal img.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Social buttons */
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow icons to wrap on small screens */
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.social-buttons button {
+    background: #333; /* Dark background for visibility */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+.social-buttons button:hover {
+    background: #555; /* Slightly lighter on hover */
+}
+.social-buttons img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Show modal and backdrop */
+.modal.show,
+.modal-backdrop.show {
+    display: block;
+}
+
+/* Hide modal and backdrop */
+.modal-backdrop,
+.modal {
+    display: none;
+}

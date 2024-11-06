@@ -86,6 +86,8 @@
 
   const timer = setInterval(updateCountdown, 1000);
 </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sharer.js/0.4.0/sharer.min.css">
 </head>
 
 <body>
@@ -93,27 +95,70 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
+    
     <div class="row">
+      
+<!-- Small modal trigger button with three dots -->
+<button class="open-modal-btn" onclick="openModal()">...</button>
+
+<!-- Modal Backdrop -->
+<div class="modal-backdrop" onclick="closeModal()"></div>
+
+<!-- Modal Structure -->
+<div class="modal" id="profileModal">
+    <img src="images/picture.jpg" alt="Profile Picture" class="avatar">
+    <h2>Sofia Avallone</h2>
+    <p>Share me on social media!</p>
+
+    <!-- Social Share Buttons with icons -->
+    <div class="social-buttons">
+      <button class="sharer button" data-sharer="twitter" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/x.svg" alt="X">
+      </button>
+      <button class="sharer button" data-sharer="facebook" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/facebook.svg" alt="Facebook">
+      </button>
+      <button class="sharer button" data-sharer="linkedin" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/linkedin.svg" alt="LinkedIn">
+      </button>
+      <button class="sharer button" data-sharer="reddit" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/reddit.svg" alt="Reddit">
+      </button>
+      <button class="sharer button" data-sharer="telegram" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/telegram.svg" alt="Telegram">
+      </button>
+      <button class="sharer button" data-sharer="whatsapp" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/whatsapp.svg" alt="WhatsApp">
+      </button>
+      <button class="sharer button" data-sharer="pinterest" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/pinterest.svg" alt="Pinterest">
+      </button>
+      <button class="sharer button" data-sharer="email" data-url="https://links.sofiaavallone.com/">
+          <img src="images/icons/email.svg" alt="Email">
+      </button>
+  </div>
+</div>
+
+<!-- Sharer.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sharer.js/0.4.0/sharer.min.js"></script>
+
+<!-- Modal Script -->
+<script>
+    // Open modal function
+    function openModal() {
+        document.getElementById('profileModal').style.display = 'block';
+        document.querySelector('.modal-backdrop').style.display = 'block';
+    }
+
+    // Close modal function
+    function closeModal() {
+        document.getElementById('profileModal').style.display = 'none';
+        document.querySelector('.modal-backdrop').style.display = 'none';
+    }
+</script>
+
       <div class="column" style="margin-top: 10%">
-
-        <!-- 
-
-          ## Getting Started with LittleLink
-
-          This page has been built with every pre-designed button available in LittleLink by default. You can rearrange and delete as needed.
-
-          You can add your own brand or others brands you may need in the `css/brands.css` file. 
-
-          You can add custom icons to `images/icons/...`. It is recommended to use a 24x24 .SVG.
-
-          Edit the "Your Image Here" section to add your own personal branding, like a picture of yourself or your brand logo!
-
-          Edit the "Title" section to change the page heading. You can use something like your name, your social handle, or your brand name.
-
-          Edit the "Short Bio" section tell users about yourself or your brand.
-
-        -->
-
+        
         <!-- Your Image Here -->
         <img src="images/picture.jpg" class="avatar" srcset="images/picture.jpg" alt="">
 
