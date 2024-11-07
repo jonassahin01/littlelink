@@ -88,6 +88,9 @@
 </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sharer.js/0.4.0/sharer.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -99,19 +102,51 @@
     <div class="row">
       
 <!-- Small modal trigger button with three dots -->
-<button class="open-modal-btn" onclick="openModal()">...</button>
+<button class="open-modal-btn" onclick="openModal()">
+  <i class="fas fa-share"></i>
+</button>
+<script>
+  let lastScrollY = window.scrollY;
 
+  window.addEventListener('scroll', () => {
+      const button = document.querySelector('.open-modal-btn');
+
+      if (window.scrollY > lastScrollY) {
+          // Scrolling down
+          button.classList.add('hidden');
+      } else {
+          // Scrolling up
+          button.classList.remove('hidden');
+      }
+      lastScrollY = window.scrollY;
+  });
+
+  // Function to open modal (if not defined elsewhere)
+  function openModal() {
+      document.getElementById('profileModal').style.display = 'block';
+      document.querySelector('.modal-backdrop').style.display = 'block';
+  }
+
+  // Function to close modal
+  function closeModal() {
+      document.getElementById('profileModal').style.display = 'none';
+      document.querySelector('.modal-backdrop').style.display = 'none';
+  }
+</script>
 <!-- Modal Backdrop -->
 <div class="modal-backdrop" onclick="closeModal()"></div>
 
 <!-- Modal Structure -->
 <div class="modal" id="profileModal">
-    <img src="images/picture.jpg" alt="Profile Picture" class="avatar">
-    <h2>Sofia Avallone</h2>
-    <p>Share me on social media!</p>
+  <!-- Close Button -->
+  <button class="close-modal-btn" onclick="closeModal()">×</button>
+  
+  <img src="images/picture.jpg" alt="Profile Picture" class="avatar">
+  <h2>Sofia Avallone</h2>
+  <p>Share me on social media!</p>
 
-    <!-- Social Share Buttons with icons -->
-    <div class="social-buttons">
+  <!-- Social Share Buttons with icons -->
+  <div class="social-buttons">
       <button class="sharer button" data-sharer="twitter" data-url="https://links.sofiaavallone.com/">
           <img src="images/icons/x.svg" alt="X">
       </button>
@@ -138,6 +173,7 @@
       </button>
   </div>
 </div>
+
 
 <!-- Sharer.js library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sharer.js/0.4.0/sharer.min.js"></script>
@@ -252,7 +288,7 @@
       <img src="images/icons/bluesky.svg" alt="Bluesky Logo">
   </a>
 
-  <a class="social-icon" href="https://www.snapchat.com/add/sofialove.xxx" target="_blank" rel="noopener" role="button">
+  <a class="social-icon" href="https://www.snapchat.com/add/sofialove.xoxo" target="_blank" rel="noopener" role="button">
       <img src="images/icons/snapchat.svg" alt="Snapchat Logo">
   </a>
   <a class="social-icon" href="https://www.threads.net/@sofiaavallone22" target="_blank" rel="noopener" role="button">
@@ -267,7 +303,7 @@
   <a class="social-icon" href="https://x.com/AvalloneSofia1" target="_blank" rel="noopener" role="button">
       <img src="images/icons/x.svg" alt="X Logo">
   </a>
-  <a class="social-icon" href="#" target="_blank" rel="noopener" role="button">
+  <a class="social-icon" href="https://www.youtube.com/@sofia.avallone" target="_blank" rel="noopener" role="button">
       <img src="images/icons/youtube.svg" alt="YouTube Logo">
   </a>
 </div>
