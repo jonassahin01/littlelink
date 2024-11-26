@@ -1507,3 +1507,151 @@ body { font-family: Arial, sans-serif; margin: 0; }
   background: #e0e0e0;
 }
 
+
+/* File: styles.css */
+
+/* Container styling */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out;
+  border: 2px solid #007bff;
+}
+
+/* Header */
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid #0056b3;
+}
+
+/* Notification badge */
+.notification-badge {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* Chat box */
+.chat-box {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 10px;
+  display: none;
+  background: #fafafa;
+  scrollbar-width: none; /* Hide scrollbars for Firefox */
+}
+
+/* Hide scrollbars for other browsers */
+.chat-box::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-box.open {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Chat message */
+.message {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-text {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.message-video {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+/* Button */
+.chat-input {
+  text-align: center;
+  padding: 12px;
+  background: #f1f1f1;
+}
+
+.chat-input button {
+  padding: 10px 15px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.chat-input button:hover {
+  background-color: #e64a19;
+}
+
+.chat-input button span {
+  font-size: 18px;
+}
+
+/* Specific styles for the chat unlock button */
+.chat-unlock-button {
+  padding: 10px 15px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  width: 100%; /* Prevent overlap issues */
+  text-align: center;
+}
+
+.chat-unlock-button:hover {
+  background-color: #e64a19;
+}
+
+.chat-unlock-button span {
+  font-size: 18px;
+}
+
+/* Add image styling */
+.message-image {
+  width: 100%; /* Make image fit the container width */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

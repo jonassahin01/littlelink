@@ -135,7 +135,6 @@
   }
 </script>
 
-  
 <!-- Modal Backdrop -->
 <div class="modal-backdrop" onclick="closeModal()"></div>
 
@@ -178,10 +177,6 @@
   </div>
 </div>
 
-
-
-
-
 <!-- Sharer.js library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sharer.js/0.4.0/sharer.min.js"></script>
 
@@ -199,7 +194,18 @@
         document.querySelector('.modal-backdrop').style.display = 'none';
     }
 </script>
+<div class="chat-container">
+  <div class="chat-header">
+    <span>You got a new message</span>
+    <span class="notification-badge" id="notification-badge">0</span>
+  </div>
+  <div class="chat-box" id="chat-box"></div>
+  <div class="chat-input">
+    <button id="view-messages">View Messages</button>
+  </div>
+</div>
 
+<script src="script.js"></script>
       <div class="column" style="margin-top: 10%">
         
         <!-- Your Image Here -->
@@ -266,15 +272,9 @@
   <img class="icon" aria-hidden="true" src="images/icons/generic-blog.svg" alt="Blog Icon">Read my blog
 </a>
 <br>
-<div class="button-wrapper">
-  <!-- Sale Badge -->
-  <div class="badge">🎂 Nov 18!</div>
-
-  <!-- Throne Button --> 
-  <a class="button button-throne" href="https://throne.com/sofiaavallone" target="_blank" rel="noopener" role="button">
-<img class="icon" aria-hidden="true" src="images/icons-extended/throne.svg" alt="Throne Logo">Throne Wishlist
-</a> 
-</div>
+<a class="button button-throne" href="https://throne.com/sofiaavallone" target="_blank" rel="noopener" role="button">
+  <img class="icon" aria-hidden="true" src="images/icons-extended/throne.svg" alt="Throne Logo">Throne Wishlist
+  </a> 
 <br>
 <!-- Payment Links -->
 <h2>Payments</h2>
